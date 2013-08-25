@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>Doom Forge Server Configuration</comment>
+	
+	<!--General Configuration-->
+	<entry key="general.isDebugMode">true</entry>
+	<entry key="general.maxCPUUsagePercent">0.99</entry>
+	<entry key="general.criticalMinOnlineUsers">-1</entry>
+	<entry key="log4j.propertyFileName">./config/log4j.properties</entry>
+
+	<!--Server-->
+	<entry key="server.port">9777</entry>
+	<entry key="server.policyPort">9778</entry>
+	<entry key="server.statPort">8083</entry>
+
+	<!--Database Configuration-->
+	<entry key="database.driverClassName">com.mysql.jdbc.Driver</entry>
+	<entry key="database.username">zeliaf</entry>
+	<entry key="database.password">ckj;ysqgfhjkm</entry>
+	<entry key="database.url">jdbc:mysql://188.120.242.153/cm</entry>
+	<entry key="database.max.connections">3</entry><!-- Не менее 2х -->
+	<entry key="database.debug">false</entry>
+
+	<!--RRD-->
+	<entry key="rrd.firstStartDelay">500000</entry>
+	<entry key="rrd.updatePeriod">500000</entry>
+
+</properties>
