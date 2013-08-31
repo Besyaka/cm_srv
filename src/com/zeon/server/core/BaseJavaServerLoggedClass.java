@@ -12,6 +12,12 @@ public class BaseJavaServerLoggedClass {
 			logger.info(msg);
 		}
 	}
+        
+        protected static void debug(String msg){
+                if (logger != null){
+                    logger.debug(msg);
+                }
+        }
 
 	protected static void exception(String msg, Throwable t) {
 		if (logger != null) {

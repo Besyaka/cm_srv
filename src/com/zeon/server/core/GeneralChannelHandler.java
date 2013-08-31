@@ -1,30 +1,15 @@
 package com.zeon.server.core;
 
-import java.io.FileReader;
-import java.io.IOException;
-import java.lang.*;
-import java.net.SocketAddress;
 
-import com.zeon.server.Json;
-import com.zeon.server.core.handlers.*;
-import com.zeon.server.core.opCodes;
-
+import com.zeon.server.core.handlers.opCodes;
+import com.zeon.server.core.handlers.Users;
 import org.apache.log4j.Logger;
 
 import org.jboss.netty.channel.ChannelHandlerContext;
-import org.jboss.netty.channel.Channel;
-import org.jboss.netty.channel.Channels;
-import org.jboss.netty.channel.ChannelFuture;
-import org.jboss.netty.channel.group.DefaultChannelGroup;
-import org.jboss.netty.channel.group.ChannelGroup;
 import org.jboss.netty.channel.ExceptionEvent;
 import org.jboss.netty.channel.MessageEvent;
 import org.jboss.netty.channel.SimpleChannelUpstreamHandler;
-//import org.jboss.netty.channel.SimpleChannelHandler;
 import org.jboss.netty.channel.ChannelStateEvent;
-import org.jboss.netty.buffer.ChannelBuffer;
-import org.jboss.netty.buffer.ChannelBuffers;
-import org.jboss.netty.channel.DownstreamMessageEvent;
 
 import static argo.jdom.JsonNodeBuilders.*;
 import argo.format.*;
@@ -33,7 +18,6 @@ import argo.jdom.*;
 public class GeneralChannelHandler extends SimpleChannelUpstreamHandler {
     boolean _debug = true;
         private static final JsonFormatter jsform = new PrettyJsonFormatter();
-        opCodes oc = new opCodes();
 	private static final Logger logger = Logger.getLogger(GeneralChannelHandler.class);
         public void channelConnected(ChannelHandlerContext ctx, ChannelStateEvent e){
             Users.getInstance().AddUser(ctx);

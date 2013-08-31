@@ -4,7 +4,7 @@
  */
 package com.zeon.server.core.handlers;
 
-import com.zeon.server.core.mysql.UsersTableHandler;
+import com.zeon.server.core.mysql.handlers.UsersTableHandler;
 import com.zeon.server.Json;
 
 /**
@@ -19,10 +19,10 @@ public class UsersDB {
         System.out.println("error getUser : " + response);
         return response;
     }
-    public int newUser(String s, int i){
+    public boolean newUser(String s, int i){
         String[] name = s.split(" ");
         long epoch = System.currentTimeMillis()/1000;
-        int response = UsersTableHandler.getInstance().AddUser(name, i, epoch);
+        boolean response = UsersTableHandler.getInstance().AddUser(name, i, epoch);
         return response;
     }
     

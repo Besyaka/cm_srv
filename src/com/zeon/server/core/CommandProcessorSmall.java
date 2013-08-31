@@ -4,6 +4,7 @@
  */
 package com.zeon.server.core;
 
+import com.zeon.server.core.handlers.MainHandler;
 import org.jboss.netty.channel.Channel;
 
 public class CommandProcessorSmall extends Thread {
